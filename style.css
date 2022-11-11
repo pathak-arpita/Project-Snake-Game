@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    background: url("img.jpg");
+    background-size: cover;
+    min-width: 100vh;
+    width: 100%;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameBoard {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 83vmin;
+
+    /* NOTE: Viewport Minimum (vmin). This unit is based on the smaller dimension of the viewport. If the viewport height is smaller than the width, the value of 1vmin will be equal to 1% of the viewport height. Similarly, if the viewport width is smaller than the height, the value of 1vmin will be equal to 1% of the viewport width. */
+
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+.score{
+    padding-top: -5px;
+    margin-top: 20px;
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    text-align: center;
+    padding: 5px 23px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.head {
+   background: url("snakehead.png");
+   background-size: 100% 100%;
+   z-index: 22;
+}
+
+.snake {
+    background-color:#45932f;
+    border: 2px solid black ;
+    border-radius: 55px;
+}
+
+.food{
+    background: url("apple.png");
+   background-size: 100% 100%;
+}
