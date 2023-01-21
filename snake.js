@@ -1,5 +1,6 @@
+// Variables -
 var lastPaintTime = 0;
-const snakeSpeed = 2;
+let snakeSpeed = 2;
 const Exp_amt = 1; 
 var score = 0;
 let inputDirection = { x: 0, y: 0 }
@@ -133,6 +134,7 @@ function snakeEatFood() {
     score += 10;
     scoreBox.innerHTML = score;
     console.log("Eated");
+    snakeSpeed++;
     foodBody = getFoodRandomPosition();
     expendSnake();
   }
@@ -169,7 +171,6 @@ function checkGameOver() {
     if(snakeOutOfGrid() || snakeInteractItself()){
         location.reload();
         alert("Game Over : You Loose");
-
     }
 }
 
