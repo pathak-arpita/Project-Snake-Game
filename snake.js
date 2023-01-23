@@ -5,6 +5,8 @@ const Exp_amt = 1;
 var score = 0;
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = inputDirection;
+// var highScore = document.getElementById("highscore");
+
 
 //let food = getFoodRandomPosition();
 const gameBoard = document.querySelector(".gameBoard");
@@ -133,6 +135,7 @@ function snakeEatFood() {
   if(isEat()) {
     score += 10;
     scoreBox.innerHTML = score;
+    // localStorage.setItem("highscore", score);
     console.log("Eated");
     snakeSpeed++;
     foodBody = getFoodRandomPosition();
@@ -171,7 +174,9 @@ function checkGameOver() {
     if(snakeOutOfGrid() || snakeInteractItself()){
         location.reload();
         alert("Game Over : You Loose");
+
     }
+    // document.getElementById("highscore").innerHTML = localStorage.getItem("highscore");
 }
 
 function snakeOutOfGrid () {
